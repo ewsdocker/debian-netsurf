@@ -2,8 +2,8 @@
 # =========================================================================
 # =========================================================================
 #
-#	debian-pull-tumblr
-#	  docker run command for debian-pull-tumblr
+#	debian-netsurf.run
+#	  docker run command for NetSurf
 #		in a Debian 9 docker image.
 #
 # =========================================================================
@@ -12,36 +12,39 @@
 # @version 9.5.0
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
-# @package debian-pull-tumblr
-# @subpackage debian-pull-tumblr
+# @package debian-netsurf
+# @subpackage debian-netsurf.run
 #
 # =========================================================================
 #
 #	Copyright © 2018. EarthWalk Software
 #	Licensed under the GNU General Public License, GPL-3.0-or-later.
 #
-#   This file is part of ewsdocker/debian-pull-tumblr.
+#   This file is part of ewsdocker/debian-netsurf.
 #
-#   ewsdocker/debian-pull-tumblr is free software: you can redistribute 
+#   ewsdocker/debian-netsurf is free software: you can redistribute 
 #   it and/or modify it under the terms of the GNU General Public License 
 #   as published by the Free Software Foundation, either version 3 of the 
 #   License, or (at your option) any later version.
 #
-#   ewsdocker/debian-pull-tumblr is distributed in the hope that it will 
+#   ewsdocker/debian-netsurf is distributed in the hope that it will 
 #   be useful, but WITHOUT ANY WARRANTY; without even the implied warranty 
 #   of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #   GNU General Public License for more details.
 #
 #   You should have received a copy of the GNU General Public License
-#   along with ewsdocker/debian-pull-tumblr.  If not, see 
+#   along with ewsdocker/debian-netsurf.  If not, see 
 #   <http://www.gnu.org/licenses/>.
 #
 # =========================================================================
+# =========================================================================
 
-docker run --rm \
-           -it \
-           -v /etc/localtime:/etc/localtime:ro \
-           -v /media/sf_ImageDownloads:/data \
-           -v ${HOME}/.config/docker/debian-pull-tumblr-latest:/root \
-           --name=debian-pull-tumblr-latest \
-       ewsdocker/debian-pull-tumblr:latest lms-tumblr clipart-autumn
+docker run -v /etc/localtime:/etc/localtime:ro \
+           -e DISPLAY=unix${DISPLAY} \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+           -v ${HOME}/public_html:/html-source \
+            -v ${HOME}/.config/docker/debian-netsurf-9.5.0:/root \
+           --name=debian-netsurf-9.5.0 \
+       ewsdocker/debian-netsurf:9.5.0  
+       
