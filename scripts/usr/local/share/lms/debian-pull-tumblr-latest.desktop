@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=/home/jay/.local/bin/docker-deb-start-0.0.2 debian-pull-tumblr-latest
+Icon=/home/jay/.local/share/icons/down.png
+Type=Application
+Terminal=false
+GenericName=Pull Tumblr (latest)
+Name=Pull Tumblr (latest)
+StartupNotify=false
+Categories=Graphics
