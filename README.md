@@ -68,11 +68,11 @@ ____
 
 **ewsdocker/debian-netsurf:latest**
   
-    docker run --rm \
-               -it \
-               -v /etc/localtime:/etc/localtime:ro \
-               -e LMSBUILD_VERSION=latest \
-               -v /media/sf_ImageDownloads:/data \
+    docker run -v /etc/localtime:/etc/localtime:ro \
+               -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+               -v ${HOME}/public_html:/html-source \
                -v ${HOME}/.config/docker/debian-netsurf-latest:/root \
                --name=debian-netsurf-latest \
            ewsdocker/debian-netsurf:latest  
@@ -81,10 +81,11 @@ ____
 
 **ewsdocker/debian-netsurf:9.5.0**
   
-    docker run --rm \
-               -it \
-               -v /etc/localtime:/etc/localtime:ro \
-               -v /media/sf_ImageDownloads:/data \
+    docker run -v /etc/localtime:/etc/localtime:ro \
+               -e DISPLAY=unix${DISPLAY} \
+               -v /tmp/.X11-unix:/tmp/.X11-unix \
+               -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+               -v ${HOME}/public_html:/html-source \
                -v ${HOME}/.config/docker/debian-netsurf-9.5.0:/root \
                --name=debian-netsurf-9.5.0 \
            ewsdocker/debian-netsurf:9.5.0  
@@ -124,13 +125,14 @@ To create and run the container, the following should work from the command-line
 
 or,
 
-    docker run --rm \
-               -it \
-               -v /etc/localtime:/etc/localtime:ro \
-               -v /media/sf_ImageDownloads:/data \
-               -v ${HOME}/.config/docker/debian-netsurf-9.5.1:/root \
-               --name=debian-netsurf-9.5.1 \
-           ewsdocker/debian-netsurf:9.5.1    
+    docker run -v /etc/localtime:/etc/localtime:ro \
+           -e DISPLAY=unix${DISPLAY} \
+           -v /tmp/.X11-unix:/tmp/.X11-unix \
+           -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
+           -v ${HOME}/public_html:/html-source \
+           -v ${HOME}/.config/docker/debian-netsurf-9.5.1:/root \
+           --name=debian-netsurf-9.5.1 \
+       ewsdocker/debian-netsurf:9.5.1    
 
 ____  
 

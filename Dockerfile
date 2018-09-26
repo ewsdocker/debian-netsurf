@@ -44,6 +44,17 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # =========================================================================
 
+ENV NETSURF_RELEASE="3.8"
+ENV NETSURF_VERS="deb-gtk" 
+ENV NETSURF_PKG="netsurf-${NETSURF_RELEASE}-${NETSURF_VERS}-x86_64.tar.gz" 
+
+ENV NETSURF_HOST=http://alpine-nginx-pkgcache 
+#ENV NETSURF_HOST=""
+
+ENV NETSURF_URL="${NETSURF_HOST}/${NETSURF_PKG}"
+ 
+# =========================================================================
+
 ENV LMSBUILD_VERSION="9.5.0" 
 ENV LMSBUILD_NAME=debian-netsurf 
 ENV LMSBUILD_REPO=ewsdocker 
@@ -51,7 +62,7 @@ ENV LMSBUILD_REGISTRY=""
 
 ENV LMSBUILD_PARENT="debian-base-gui:9.5.2"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
-ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, NetSurf 3.8"
+ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, NetSurf ${NETSURF_RELEASE}"
 
 # =========================================================================
 
@@ -59,18 +70,14 @@ RUN apt-get -y update \
  && apt-get -y upgrade \
  && apt-get -y install \
                bash-completion \
- && wget https://git.netsurf-browser.org/netsurf.git/plain/docs/env.sh \
- && unset HOST \
- && source env.sh \
- && ns-package-install \
- && ns-clone \
- && ns-pull-install \
- && rm env.sh \
- && cd ~/dev-netsurf/workspace \
- && source env.sh \
- && cd netsurf \
- && make \
- && chmod -R +x /usr/local/bin/* \
+               libgtk2.0-0 \
+               libgtk2.0-bin \
+               libgtk2.0-common \
+ && wget ${NETSURF_URL} \
+ && tar -xvf ${NETSURF_PKG} \
+ && cp usr/bin/nsgtk /usr/bin/netsurf \
+ && mkdir /usr/share/netsurf \
+ && mv usr/share/netsurf/* /usr/share/netsurf \
  && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt \ 
  && apt-get clean 
 
@@ -78,18 +85,11 @@ RUN apt-get -y update \
 
 COPY scripts/. /
 
-RUN chmod 775 /usr/bin/tumblr \
- && chmod 775 /usr/bin/tumblr.sh \
- && chmod 600 /usr/local/share/applications/${LMSBUILD_NAME}-${LMSBUILD_VERSION}.desktop  
-
-# =========================================================================
-
-VOLUME /lists
-VOLUME /data
-
-WORKDIR /data
+RUN chmod 644 /usr/local/share/applications/${LMSBUILD_NAME}-${LMSBUILD_VERSION}.desktop \
+ && chmod -R +x /usr/local/bin/* \
+ && chmod +x /usr/bin/netsurf
 
 # =========================================================================
 
 ENTRYPOINT ["/my_init","--quiet"]
-CMD ["lms-tumblr"]
+CMD ["/usr/bin/netsurf"]
