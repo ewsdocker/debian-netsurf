@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.0
+# @version 9.5.2
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-netsurf
@@ -36,7 +36,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-base-gui:9.5.2
+FROM ewsdocker/debian-base-gui:9.5.5-gtk2
 
 MAINTAINER Jay Wheeler <earthwalksoftware@gmail.com>
 
@@ -55,12 +55,12 @@ ENV NETSURF_URL="${NETSURF_HOST}/${NETSURF_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.0" 
+ENV LMSBUILD_VERSION="9.5.2" 
 ENV LMSBUILD_NAME=debian-netsurf 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
-ENV LMSBUILD_PARENT="debian-base-gui:9.5.2"
+ENV LMSBUILD_PARENT="debian-base-gui:9.5.5-gtk2"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, NetSurf ${NETSURF_RELEASE}"
 
@@ -68,11 +68,6 @@ ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, NetSurf ${NETSURF_RELEASE}"
 
 RUN apt-get -y update \
  && apt-get -y upgrade \
- && apt-get -y install \
-               bash-completion \
-               libgtk2.0-0 \
-               libgtk2.0-bin \
-               libgtk2.0-common \
  && wget ${NETSURF_URL} \
  && tar -xvf ${NETSURF_PKG} \
  && cp usr/bin/nsgtk /usr/bin/netsurf \
@@ -85,9 +80,10 @@ RUN apt-get -y update \
 
 COPY scripts/. /
 
-RUN chmod 644 /usr/local/share/applications/${LMSBUILD_NAME}-${LMSBUILD_VERSION}.desktop \
- && chmod -R +x /usr/local/bin/* \
- && chmod +x /usr/bin/netsurf
+RUN chmod -R +x /usr/local/bin/* \
+ && chmod +x /usr/bin/netsurf \
+ && chmod 644 /usr/local/share/applications/${LMSBUILD_NAME}-${LMSBUILD_VERSION}.desktop \
+ && chmod 644 /usr/local/share/applications/${LMSBUILD_NAME}.desktop
 
 # =========================================================================
 
