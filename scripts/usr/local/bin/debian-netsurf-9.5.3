@@ -9,7 +9,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.2
+# @version 9.5.3
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package debian-netsurf
@@ -44,8 +44,8 @@ docker run -v /etc/localtime:/etc/localtime:ro \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v ${HOME}/source:/source \
-           -v ${HOME}/workspace-debian-netsurf-9.5.2:/workspace \
-           -v ${HOME}/.config/docker/debian-netsurf-9.5.2:/root \
-           --name=debian-netsurf-9.5.2 \
-       ewsdocker/debian-netsurf:9.5.2  
+           -v ${HOME}/workspace-debian-netsurf-9.5.3:/workspace \
+           -v ${HOME}/.config/docker/debian-netsurf-9.5.3:/root \
+           --name=debian-netsurf-9.5.3 \
+       ewsdocker/debian-netsurf:9.5.3  
        

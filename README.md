@@ -1,7 +1,8 @@
-## ewsdocker/debian-netsurf:9.5.2  
+## ewsdocker/debian-netsurf:9.5.3  
 
 **A NetSurf Internet browser in a Docker image.**  
 
+**ewsdocker/debian-netsurf** is a **Docker** wrapper around the [NetSurf](http://www.netsurf-browser.org/) browser. Find out more about the browser at [NetSurf.org](http://www.netsurf-browser.org/).
 ____  
 
 **This software is still under test.  It is most likely very unstable.**  
@@ -41,16 +42,16 @@ ____
 
 ____  
 
-**ewsdocker/debian-netsurf:9.5.2**  
+**ewsdocker/debian-netsurf:9.5.3**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-netsurf-9.5.2:/root \
-               --name=debian-netsurf-9.5.2 \
-           ewsdocker/debian-netsurf:9.5.2 lms-setup  
+               -v ${HOME}/.config/docker/debian-netsurf-9.5.3:/root \
+               --name=debian-netsurf-9.5.3 \
+           ewsdocker/debian-netsurf:9.5.3 lms-setup  
 
 ____  
   
@@ -83,16 +84,16 @@ ____
 
 ____  
 
-**ewsdocker/debian-netsurf:9.5.2**
+**ewsdocker/debian-netsurf:9.5.3**
   
     docker run -v /etc/localtime:/etc/localtime:ro \
                -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v ${HOME}/public_html:/html-source \
-               -v ${HOME}/.config/docker/debian-netsurf-9.5.2:/root \
-               --name=debian-netsurf-9.5.2 \
-           ewsdocker/debian-netsurf:9.5.2  
+               -v ${HOME}/.config/docker/debian-netsurf-9.5.3:/root \
+               --name=debian-netsurf-9.5.3 \
+           ewsdocker/debian-netsurf:9.5.3  
 
 ____  
 Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-netsurf/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
@@ -107,17 +108,17 @@ ____
 
 **ewsdocker/debian-netsurf:edge**  
 
-**edge** is the development tag for the **9.5.3** release tag.
+**edge** is the development tag for the **9.5.4** release tag.
 
     docker pull ewsdocker/debian-netsurf:edge
-    docker tag ewsdocker/debian-netsurf:edge ewsdocker/debian-netsurf:9.5.3
+    docker tag ewsdocker/debian-netsurf:edge ewsdocker/debian-netsurf:9.5.4
     docker run -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-netsurf-9.5.3:/root \
-               --name=debian-netsurf-9.5.3 \
-           ewsdocker/debian-netsurf:9.5.3 lms-setup  
+               -v ${HOME}/.config/docker/debian-netsurf-9.5.4:/root \
+               --name=debian-netsurf-9.5.4 \
+           ewsdocker/debian-netsurf:9.5.4 lms-setup  
 
 optional step:
 
@@ -125,7 +126,7 @@ optional step:
 
 To create and run the container, the following should work from the command-line, 
 
-    ~/.local/bin/debian-netsurf-9.5.3  
+    ~/.local/bin/debian-netsurf-9.5.4  
 
 or,
 
@@ -134,9 +135,9 @@ or,
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v ${HOME}/public_html:/html-source \
-           -v ${HOME}/.config/docker/debian-netsurf-9.5.3:/root \
-           --name=debian-netsurf-9.5.3 \
-       ewsdocker/debian-netsurf:9.5.3    
+           -v ${HOME}/.config/docker/debian-netsurf-9.5.4:/root \
+           --name=debian-netsurf-9.5.4 \
+       ewsdocker/debian-netsurf:9.5.4    
 
 ____  
 
@@ -173,3 +174,6 @@ You should have received a copy of the GNU General Public License
 along with **ewsdocker/debian-netsurf**.  If not, see 
 <http://www.gnu.org/licenses/>.  
 
+____  
+
+**NetSurf** is licensed under the GNU General Public License, GPL, Version 2, with portions licensed under various _Annexes_.  Refer to the [NetSurf License](http://www.netsurf-browser.org/about/licence.html) page for further information and restrictions.  
