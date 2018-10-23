@@ -5,10 +5,6 @@
 **ewsdocker/debian-netsurf** is a **Docker** wrapper around the [NetSurf](http://www.netsurf-browser.org/) browser. Find out more about the browser at [NetSurf.org](http://www.netsurf-browser.org/).
 ____  
 
-**This software is still under test.  It is most likely very unstable.**  
-
-____  
-
 **Pre-built Docker images are available from [ewsdocker/debian-netsurf](https://hub.docker.com/r/ewsdocker/debian-netsurf).**  
 
 ____  
