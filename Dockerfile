@@ -36,7 +36,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-base-gui:9.5.6-gtk2
+FROM ewsdocker/debian-kaptain:9.5.4-gtk2
 
 MAINTAINER Jay Wheeler <earthwalksoftware@gmail.com>
 
@@ -60,7 +60,7 @@ ENV LMSBUILD_NAME=debian-netsurf
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
-ENV LMSBUILD_PARENT="debian-base-gui:9.5.6-gtk2"
+ENV LMSBUILD_PARENT="debian-kaptain:9.5.4-gtk2"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, NetSurf ${NETSURF_RELEASE}"
 
