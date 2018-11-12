@@ -44,7 +44,7 @@ docker run -v /etc/localtime:/etc/localtime:ro \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v ${HOME}/public_html:/html-source \
-           -v ${HOME}/workspace-netsurf:/workspace \
+           -v ${HOME}/.config/docker/debian-netsurf-latest/workspace:/workspace \
            -v ${HOME}/.config/docker/debian-netsurf-latest:/root \
            --name=debian-netsurf-latest \
        ewsdocker/debian-netsurf  

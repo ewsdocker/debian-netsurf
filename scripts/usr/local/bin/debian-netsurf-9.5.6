@@ -44,7 +44,7 @@ docker run -v /etc/localtime:/etc/localtime:ro \
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v ${HOME}/source:/source \
-           -v ${HOME}/workspace-debian-netsurf-9.5.6:/workspace \
+           -v ${HOME}/.config/docker/debian-netsurf-9.5.6/workspace:/workspace \
            -v ${HOME}/.config/docker/debian-netsurf-9.5.6:/root \
            --name=debian-netsurf-9.5.6 \
        ewsdocker/debian-netsurf:9.5.6  
