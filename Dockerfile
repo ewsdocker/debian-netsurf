@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.5
+# @version 9.5.6
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-netsurf
@@ -47,15 +47,16 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV NETSURF_RELEASE="3.8"
 ENV NETSURF_VERS="deb-gtk" 
 ENV NETSURF_PKG="netsurf-${NETSURF_RELEASE}-${NETSURF_VERS}-x86_64.tar.gz" 
+ENV NETSURF_BUILDER="9.5.1"
 
-ENV NETSURF_HOST=http://alpine-nginx-pkgcache 
-#ENV NETSURF_HOST=""
+#ENV NETSURF_HOST=http://alpine-nginx-pkgcache 
+ENV NETSURF_HOST="https://github.com/ewsdocker/debian-netsurf-packager/releases/download/${NETSURF_BUILDER}/"
 
 ENV NETSURF_URL="${NETSURF_HOST}/${NETSURF_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.5" 
+ENV LMSBUILD_VERSION="9.5.6" 
 ENV LMSBUILD_NAME=debian-netsurf 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
