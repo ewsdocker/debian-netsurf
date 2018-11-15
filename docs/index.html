@@ -706,6 +706,45 @@
       }
 
     </style>
+
+    <!--  ------------------------ -->
+    <!--                           -->
+    <!--  Table of Contents Layout -->
+    <!--                           -->
+    <!--  ------------------------ -->
+    <style>
+     #toc_containerx 
+     {
+      background: #f9f9f9 none repeat scroll 0 0;
+      border: 1px solid #aaa;
+      display: table;
+      font-size: 95%;
+      margin-bottom: 1em;
+      padding: 20px;
+      width: auto;
+     }
+
+     #toc_container 
+     {
+      display: table;
+      margin-bottom: 1em;
+      padding: 20px;
+      font-size: 14px;
+      font-weight:normal;
+     }
+
+    .toc_title 
+    {
+     font-weight: 700;
+     text-align: center;
+    }
+
+    #toc_container li, #toc_container ul, #toc_container ul li
+    {
+     list-style: outside none none !important;
+    }
+   </style>
+
   </head>
   <body>
 
@@ -966,7 +1005,49 @@
             <!-- --------------------- -->
             <!--      block            -->
             <!-- --------------------- -->
-            <div class="green border block" style="background-color:#FFFFFF;">
+            <div class="darkBlue border block">
+
+              <div id="toc_container">
+                <p class="toc_title">debian-netsurf Contents</p>
+                <ul class="toc_list">
+                  <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki">1 debian-netsurf</a></li>
+
+                  <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki/QuickStart">2 Quick Start</a></li>
+                  <ul>
+                    <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki/QuickStart#installing">2.1 Installing debian-netsurf</a></li>
+                    <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki/QuickStart#running">2.2 Running the installed scripts</a></li>
+                    <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki/QuickStart#mapping">2.3 Mapping docker host resources to the docker container</a></li>
+                    <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki/QuickStart#persistence">2.4 Persistence</a></li>
+
+                    <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki/QuickStart#installing">2.1 Installing debian-netsurf</a></li>
+                    <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki/QuickStart#running">2.2 Running the installed scripts</a></li>
+                  </ul></li>
+
+                  <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki/CommandLineInterface">3 Command-line Interface</a></li>
+
+                  <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki/DockerTags">3 Docker Tags</a></li>
+
+                  <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki/License">4 Licenses</a></li>
+                  <ul>
+                    <li><a href="https://github.com/ewsdocker/debian-netsurf/wiki/License">4.1 debian-netsurf</a></li>
+                    <li><a href="http://www.netsurf-browser.org/about/licence.html">4.2 NetSurf</a></li>
+                  </ul></li>
+
+                </ul>
+                
+              </div>
+            </div>
+
+            <!-- --------------------- -->
+            <!--      block            -->
+            <!-- --------------------- -->
+
+	        <p style="text-align: center;">&nbsp;</p>
+
+            <!-- --------------------- -->
+            <!--      block            -->
+            <!-- --------------------- -->
+            <div class="green border block">
 
               <div id="blockCentered">
  	            <span style="font-size:16px; font-weight:bold;">Featured Project:</span> &nbsp; 
