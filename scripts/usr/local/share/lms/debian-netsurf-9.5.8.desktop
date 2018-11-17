@@ -1,10 +1,10 @@
 [Desktop Entry]
 Encoding=UTF-8
-Exec=/home/jay/.local/bin/docker-deb-start-0.0.4 debian-netsurf:9.5.7
+Exec=/home/jay/.local/bin/docker-deb-start-0.0.4 debian-netsurf:9.5.8
 Icon=/home/jay/.local/share/icons/NetSurfIcon1.png
 Type=Application
 Terminal=false
-GenericName=NetSurf (9.5.7)
-Name=NetSurf (9.5.7)
+GenericName=NetSurf (9.5.8)
+Name=NetSurf (9.5.8)
 StartupNotify=false
 Categories=Network
