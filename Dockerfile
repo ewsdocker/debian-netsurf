@@ -45,8 +45,9 @@ ENV DEBIAN_FRONTEND noninteractive
 # =========================================================================
 
 ENV NETSURF_RELEASE="3.8"
+ENV NETSURF_BUILD=0
 ENV NETSURF_VERS="deb-gtk" 
-ENV NETSURF_PKG="netsurf-${NETSURF_RELEASE}-${NETSURF_VERS}-x86_64.tar.gz" 
+ENV NETSURF_PKG="netsurf-${NETSURF_RELEASE}-${NETSURF_BUILD}-${NETSURF_VERS}-x86_64.tar.gz" 
 ENV NETSURF_BUILDER="9.5.1"
 
 ENV NETSURF_HOST=http://alpine-nginx-pkgcache 
