@@ -49,7 +49,7 @@ ENV NETSURF_BUILD=0
 
 ENV NETSURF_RELEASE="3.8"
 ENV NETSURF_VERS="deb-gtk" 
-ENV NETSURF_PKG="netsurf-${NETSURF_RELEASE}-${NETSURF_BUILD}-${NETSURF_VERS}-${NETSURF_BUILD}-x86_64.tar.gz" 
+ENV NETSURF_PKG="netsurf-${NETSURF_RELEASE}-${NETSURF_BUILD}-${NETSURF_VERS}-x86_64.tar.gz" 
 
 #ENV NETSURF_HOST=http://alpine-nginx-pkgcache 
 ENV NETSURF_HOST="https://github.com/ewsdocker/debian-netsurf-packager/releases/download/${NETSURF_BUILDER}/"
