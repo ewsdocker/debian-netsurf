@@ -59,7 +59,7 @@ ENV NETSURF_URL="${NETSURF_HOST}/${NETSURF_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.10" 
+ENV LMSBUILD_VERSION="9.5.10"
 ENV LMSBUILD_NAME=debian-netsurf 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
