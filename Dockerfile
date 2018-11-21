@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.9
+# @version 9.5.10
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-netsurf
@@ -59,7 +59,7 @@ ENV NETSURF_URL="${NETSURF_HOST}/${NETSURF_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.9" 
+ENV LMSBUILD_VERSION="9.5.10" 
 ENV LMSBUILD_NAME=debian-netsurf 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
