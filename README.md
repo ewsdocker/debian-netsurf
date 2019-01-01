@@ -1,4 +1,4 @@
-## ewsdocker/debian-netsurf:9.5.10  
+## ewsdocker/debian-netsurf:9.6.0  
 
 **A NetSurf Internet browser in a Docker image.**  
 
@@ -38,16 +38,16 @@ ____
 
 ____  
 
-**ewsdocker/debian-netsurf:9.5.10**  
+**ewsdocker/debian-netsurf:9.6.0**  
   
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-netsurf-9.5.10:/root \
-               --name=debian-netsurf-9.5.10 \
-           ewsdocker/debian-netsurf:9.5.10 lms-setup  
+               -v ${HOME}/.config/docker/debian-netsurf-9.6.0:/root \
+               --name=debian-netsurf-9.6.0 \
+           ewsdocker/debian-netsurf:9.6.0 lms-setup  
 
 ____  
   
@@ -80,16 +80,16 @@ ____
 
 ____  
 
-**ewsdocker/debian-netsurf:9.5.10**
+**ewsdocker/debian-netsurf:9.6.0**
   
     docker run -v /etc/localtime:/etc/localtime:ro \
                -e DISPLAY=unix${DISPLAY} \
                -v /tmp/.X11-unix:/tmp/.X11-unix \
                -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
                -v ${HOME}/public_html:/html-source \
-               -v ${HOME}/.config/docker/debian-netsurf-9.5.10:/root \
-               --name=debian-netsurf-9.5.10 \
-           ewsdocker/debian-netsurf:9.5.10  
+               -v ${HOME}/.config/docker/debian-netsurf-9.6.0:/root \
+               --name=debian-netsurf-9.6.0 \
+           ewsdocker/debian-netsurf:9.6.0  
 
 ____  
 Refer to [Mapping docker host resources to the docker container](https://github.com/ewsdocker/debian-netsurf/wiki/QuickStart#mapping) for a discussion of customizing the executable scripts..  
@@ -104,18 +104,18 @@ ____
 
 **ewsdocker/debian-netsurf:edge**  
 
-**edge** is the development tag for the **9.5.11** release tag.
+**edge** is the development tag for the **9.6.1** release tag.
 
     docker pull ewsdocker/debian-netsurf:edge
-    docker tag ewsdocker/debian-netsurf:edge ewsdocker/debian-netsurf:9.5.11
+    docker tag ewsdocker/debian-netsurf:edge ewsdocker/debian-netsurf:9.6.1
     docker run --rm \
                -v ${HOME}/bin:/userbin \
                -v ${HOME}/.local:/usrlocal \
                -e LMS_BASE="${HOME}/.local" \
                -v ${HOME}/.config/docker:/conf \
-               -v ${HOME}/.config/docker/debian-netsurf-9.5.11:/root \
-               --name=debian-netsurf-9.5.11 \
-           ewsdocker/debian-netsurf:9.5.11 lms-setup  
+               -v ${HOME}/.config/docker/debian-netsurf-9.6.1:/root \
+               --name=debian-netsurf-9.6.1 \
+           ewsdocker/debian-netsurf:9.6.1 lms-setup  
 
 optional step:
 
@@ -123,7 +123,7 @@ optional step:
 
 To create and run the container, the following should work from the command-line, 
 
-    ~/.local/bin/debian-netsurf-9.5.11  
+    ~/.local/bin/debian-netsurf-9.6.1  
 
 or,
 
@@ -132,9 +132,9 @@ or,
            -v /tmp/.X11-unix:/tmp/.X11-unix \
            -v ${HOME}/.Xauthority:${HOME}/.Xauthority \
            -v ${HOME}/public_html:/html-source \
-           -v ${HOME}/.config/docker/debian-netsurf-9.5.11:/root \
-           --name=debian-netsurf-9.5.11 \
-       ewsdocker/debian-netsurf:9.5.11    
+           -v ${HOME}/.config/docker/debian-netsurf-9.6.1:/root \
+           --name=debian-netsurf-9.6.1 \
+       ewsdocker/debian-netsurf:9.6.1    
 
 ____  
 

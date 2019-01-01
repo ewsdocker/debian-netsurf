@@ -7,7 +7,7 @@
 # =========================================================================
 #
 # @author Jay Wheeler.
-# @version 9.5.11
+# @version 9.6.0
 # @copyright © 2018. EarthWalk Software.
 # @license Licensed under the GNU General Public License, GPL-3.0-or-later.
 # @package ewsdocker/debian-netsurf
@@ -36,7 +36,7 @@
 #
 # =========================================================================
 # =========================================================================
-FROM ewsdocker/debian-kaptain:9.5.4-gtk2
+FROM ewsdocker/debian-kaptain:9.6.0-gtk2
 
 MAINTAINER Jay Wheeler <earthwalksoftware@gmail.com>
 
@@ -59,12 +59,12 @@ ENV NETSURF_URL="${NETSURF_HOST}/${NETSURF_PKG}"
  
 # =========================================================================
 
-ENV LMSBUILD_VERSION="9.5.11"
+ENV LMSBUILD_VERSION="9.6.0"
 ENV LMSBUILD_NAME=debian-netsurf 
 ENV LMSBUILD_REPO=ewsdocker 
 ENV LMSBUILD_REGISTRY="" 
 
-ENV LMSBUILD_PARENT="debian-kaptain:9.5.4-gtk2"
+ENV LMSBUILD_PARENT="debian-kaptain:9.6.0-gtk2"
 ENV LMSBUILD_DOCKER="${LMSBUILD_REPO}/${LMSBUILD_NAME}:${LMSBUILD_VERSION}" 
 ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, NetSurf ${NETSURF_RELEASE}"
 
@@ -72,13 +72,14 @@ ENV LMSBUILD_PACKAGE="${LMSBUILD_PARENT}, NetSurf ${NETSURF_RELEASE}"
 
 RUN apt-get -y update \
  && apt-get -y upgrade \
+ && apt-get clean all \
  && wget ${NETSURF_URL} \
  && tar -xvf ${NETSURF_PKG} \
+ && rm ${NETSURF_PKG} \
  && cp usr/bin/nsgtk /usr/bin/netsurf \
  && mkdir /usr/share/netsurf \
  && mv usr/share/netsurf/* /usr/share/netsurf \
- && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt \ 
- && apt-get clean 
+ && printf "${LMSBUILD_DOCKER} (${LMSBUILD_PACKAGE}), %s @ %s\n" `date '+%Y-%m-%d'` `date '+%H:%M:%S'` >> /etc/ewsdocker-builds.txt  
 
 # =========================================================================
 
